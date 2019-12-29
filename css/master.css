@@ -1,5 +1,7 @@
 body {
   background-color: #FF7083;
+  font-family: sans-serif;
+  font-size: 1.5em;
 }
 
 h1 {
@@ -11,11 +13,26 @@ h1 {
 nav ul li {
   display: block;
   float: left;
-  padding-left: 3em;
+  margin: .4em;
+  padding: .5em;
+  border: .1em solid red;
+  border-radius: 15px;
+  text-align: center;
+}
+
+nav ul li:hover {
+  background-color: #F25ABF;
+  border-style: outset;
+}
+
+nav ul li:active {
+  background-color: #CD4CA2;
+  border-style: inset;
 }
 
 footer {
   display: block;
   clear: both;
+  margin-top: 2em;
   /* position: fixed; */
 }
