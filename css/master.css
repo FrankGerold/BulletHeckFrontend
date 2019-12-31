@@ -49,10 +49,12 @@ footer {
   display: block;
   clear: both;
   margin-top: 2em;
-  /* position: fixed; */
+  position: absolute;
+  bottom: 0;
 }
 
 aside {
   float: right;
   width: 25%;
+  font-size: .9em;
 }
