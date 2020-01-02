@@ -51,7 +51,7 @@ const Game = (x) => {
 
     let rectangle = x.rect(rectX, rectY, 50, 30);
 
-    x.fill ('#000F5A')
+    x.fill ('#241926')
 
 
     randX += traj

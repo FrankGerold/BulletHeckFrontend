@@ -15,11 +15,16 @@ body {
 h1 {
   font-family: 'Modak', cursive;
   color: #FF7083;
-  text-shadow: 3px 3px 3px #BA3B52;
+  text-shadow: 2px 2px 2px #BA3B52;
   animation-name: bounce;
   animation-duration: 1.5s;
   animation-fill-mode: both;
   animation-iteration-count: infinite;
+}
+
+
+header {
+  clear: right;
 }
 
 nav ul li {
@@ -44,7 +49,7 @@ nav ul li:active {
 
 #content {
   /* clear: both; */
-  margin-top: 2em;
+  margin-top: 4em;
   float: left;
   position: relative;
 }
