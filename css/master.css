@@ -1,7 +1,8 @@
 body {
-  background-color: #FF7083;
+  background-color: #241926;
   font-family: 'Lato', sans-serif;
   font-size: 1.5em;
+  color: #F3F7F4;
 }
 
 @keyframes bounce {
@@ -13,7 +14,8 @@ body {
 
 h1 {
   font-family: 'Modak', cursive;
-  text-shadow: 3px 3px 3px red;
+  color: #FF7083;
+  text-shadow: 3px 3px 3px #BA3B52;
   animation-name: bounce;
   animation-duration: 1.5s;
   animation-fill-mode: both;
@@ -25,31 +27,33 @@ nav ul li {
   float: left;
   margin: .4em;
   padding: .5em;
-  border: .1em solid red;
+  border: .1em solid #FF7083;
   border-radius: 15px;
   text-align: center;
 }
 
 nav ul li:hover {
-  background-color: #F25ABF;
+  background-color: #FF7083;
   border-style: outset;
 }
 
 nav ul li:active {
-  background-color: #CD4CA2;
+  background-color: #BA3B52;
   border-style: inset;
 }
 
 #content {
-  clear: both;
+  /* clear: both; */
   margin-top: 2em;
+  float:left;
+  position: relative;
 }
 
 footer {
   display: block;
   clear: both;
   margin-top: 2em;
-  position: absolute;
+  position: relative;
   bottom: 0;
 }
 
