@@ -16,6 +16,15 @@ const Game = (x) => {
   let rectY = 100
   let randX = Math.floor(Math.random() * 640)
   let randY = Math.floor(Math.random() * 480)
+  let randMotion = (num) => {
+    if (randY >= 480/2) {
+      return -3
+    }
+    else {
+      return 3
+    }
+  }
+  let traj = randMotion()
 
   x.draw = () => {
     x.background('#BA3B52');
@@ -44,6 +53,10 @@ const Game = (x) => {
 
     x.fill ('#000F5A')
 
+
+    randX += traj
+    randY += traj
     let bullet = x.square(randX, randY, 10, 3);
+
   }
 }

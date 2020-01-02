@@ -45,7 +45,7 @@ nav ul li:active {
 #content {
   /* clear: both; */
   margin-top: 2em;
-  float:left;
+  float: left;
   position: relative;
 }
 
@@ -58,6 +58,7 @@ footer {
 }
 
 aside {
+  position: relative;
   float: right;
   width: 33%;
   font-size: .9em;
