@@ -1,5 +1,6 @@
 const buttonList = document.getElementById('nav_options')
 const renderArea = document.getElementById('content')
+const sideText = document.querySelector('aside')
 
 class NavButton {
   constructor () {
@@ -55,7 +56,9 @@ class ScoresButton extends NavButton {
       scoreItem.innerText = `${scorePlayer}: ${scoreValue} at ${scoreTime}`
       scoreList.append(scoreItem)
     }
-    renderArea.append(scoreList)
+    sideText.innerHtml = '';
+    sideText.prepend(scoreList);
+
   }
 }
 
