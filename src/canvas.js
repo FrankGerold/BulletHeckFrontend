@@ -12,18 +12,33 @@ const Game = (x) => {
     x.frameRate(60);
   }
 
+  let rectX = 10
+  let rectY = 100
+
   x.draw = () => {
     x.background('#BA3B52');
     let score = x.text(Math.round(x.frameCount/30), 100, 100)
     x.fill('#FF7083');
-    let oval = x.ellipse(x.mouseX, x.mouseY, 80, 50);
+    let oval = x.ellipse(x.mouseX, x.mouseY, 30, 20);
 
-    let rectangle = x.rect(0, 0, 50, 30);
-    if ((x.keyIsPressed == true) && (x.key == 'ArrowLeft')) {
-      rectangle.x -= 5;
+
+
+    if ((x.keyIsPressed == true) && (x.keyCode === 37)) {
+      rectX -= 3;
     }
-    if ((x.keyIsPressed == true) && (x.key == 'ArrowRight')) {
-      rectangle.x += 5;
+
+    if ((x.keyIsPressed == true) && (x.keyCode === 39)) {
+      rectX += 3;
     }
+
+    if ((x.keyIsPressed == true) && (x.keyCode === 38)) {
+      rectY -= 3;
+    }
+
+    if ((x.keyIsPressed == true) && (x.keyCode === 40)) {
+      rectY += 3;
+    }
+
+    let rectangle = x.rect(rectX, rectY, 50, 30);
   }
 }
