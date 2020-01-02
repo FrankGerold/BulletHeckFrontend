@@ -23,7 +23,13 @@ class NewButton extends NavButton {
     this.button.id="new"
     this.button.innerText='New Game'
     buttonList.appendChild(this.button)
+
+    this.button.addEventListener('click', (click) => {
+      renderArea.innerHTML = ''
+      let newGame = new p5(Game)
+    })
   }
+
 }
 
 class ScoresButton extends NavButton {
@@ -35,6 +41,7 @@ class ScoresButton extends NavButton {
     buttonList.appendChild(this.button)
 
     this.button.addEventListener('click', (click) => {
+      sideText.innerHTML = '';
       Adapter.showGames()
         .then(games => {
           this.renderScoreList(games)})
@@ -43,6 +50,7 @@ class ScoresButton extends NavButton {
 
   renderScoreList(scores) {
     let scoreList = document.createElement('ol')
+
 
     for (let i = 0; i < scores.data.length; i++) {
       let scoreItem = document.createElement('li')
@@ -56,7 +64,6 @@ class ScoresButton extends NavButton {
       scoreItem.innerText = `${scorePlayer}: ${scoreValue} at ${scoreTime}`
       scoreList.append(scoreItem)
     }
-    sideText.innerHtml = '';
     sideText.prepend(scoreList);
 
   }

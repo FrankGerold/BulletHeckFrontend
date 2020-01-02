@@ -14,6 +14,8 @@ const Game = (x) => {
 
   let rectX = 10
   let rectY = 100
+  let randX = Math.floor(Math.random() * 640)
+  let randY = Math.floor(Math.random() * 480)
 
   x.draw = () => {
     x.background('#BA3B52');
@@ -22,23 +24,26 @@ const Game = (x) => {
     let oval = x.ellipse(x.mouseX, x.mouseY, 30, 20);
 
 
-
     if ((x.keyIsPressed == true) && (x.keyCode === 37)) {
-      rectX -= 3;
+      rectX -= 5;
     }
 
     if ((x.keyIsPressed == true) && (x.keyCode === 39)) {
-      rectX += 3;
+      rectX += 5;
     }
 
     if ((x.keyIsPressed == true) && (x.keyCode === 38)) {
-      rectY -= 3;
+      rectY -= 5;
     }
 
     if ((x.keyIsPressed == true) && (x.keyCode === 40)) {
-      rectY += 3;
+      rectY += 5;
     }
 
     let rectangle = x.rect(rectX, rectY, 50, 30);
+
+    x.fill ('#000F5A')
+
+    let bullet = x.square(randX, randY, 10, 3);
   }
 }
