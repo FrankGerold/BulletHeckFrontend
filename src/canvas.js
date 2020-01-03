@@ -10,10 +10,18 @@ const Game = (x) => {
     x.drawingContext.shadowColor = "#F3F7F4";
     x.frameRate(60);
     x.cursor('none')
+
+
   }
 
   // let rectX = 10
   // let rectY = 100
+
+
+  this.bullets = []
+  for (var i = 0; i < 15; i++) {
+    this.bullets.push(new Bullet)
+  }
 
   let bull1 = new Bullet(x)
 
@@ -27,6 +35,12 @@ const Game = (x) => {
 
     let char = x.ellipse(x.mouseX, x.mouseY, 20, 20)
 
+
+    // this.bullets.forEach((bully) => {
+    //   if (x.frameCount%30 === 0) {
+    //     bully.renderBullet(x)
+    //   }
+    // }
 
     // if ((x.keyIsPressed == true) && (x.keyCode === 37)) {
     //   rectX -= 5;
@@ -46,7 +60,10 @@ const Game = (x) => {
     //
     // let rectangle = x.rect(rectX, rectY, 50, 30);
 
-    bull1.renderBullet(x);
+    bull1.renderBullet(x)
+
+    // setInterval(300, this.bullets.forEach((bullet, i) => {
+    //   bullet.renderBullet(x)
 
   }
 }
