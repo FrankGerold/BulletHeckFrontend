@@ -11,16 +11,11 @@ class Bullet {
 
    this.traj = this.randMotion()
 
-    //
-    // x.fill('#241926')
-    // x.square(this.randX, this.randY, 10, 3);
-
-    // Bullet.all.push(this)
   }
 
   renderBullet = function (x) {
     x.fill('#241926')
-    
+
     this.randX += this.traj
     this.randY += this.traj
     x.square(this.randX, this.randY, 10, 3);
