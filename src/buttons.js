@@ -14,6 +14,33 @@ class ProfileButton extends NavButton {
     this.button.id='profile'
     this.button.innerText = 'Player Profile'
     buttonList.appendChild(this.button)
+
+    this.button.addEventListener('click', (click) => {
+      sideText.innerHTML = '';
+      Adapter.showPlayer()
+      .then(games => {
+        this.renderProfile(player)})
+      })
+  }
+
+
+  renderProfile (player) {
+    let scoreList =  document.createElement('ul')
+    let playerHeader = document.createElement('h2')
+
+    player.innerText = player.data.attributes.name;
+
+    for (game in player.included) {
+      let gameItem = document.createElement('li')
+      let gameScore = game.attributes.score
+      let gameDate = game.attributes.updated_at.slice(0, 10)
+
+      gameItem.innerText = `Score: ${gameScore} on ${gameDate}`;
+
+      scoreList.appendChild(gameItem);
+    }
+    sideText.prepend(playerHeader);
+    sideText.append(scoreList);
   }
 }
 
@@ -58,10 +85,10 @@ class ScoresButton extends NavButton {
       let currentScore = scores.data[i].attributes
 
       let scoreValue = currentScore.score
-      let scoreTime = currentScore.updated_at
+      let scoreTime = currentScore.updated_at.slice(0, 10)
       let scorePlayer = scores.included[i].attributes.name
 
-      scoreItem.innerHTML = `${scorePlayer}: ${scoreValue} at ${scoreTime}
+      scoreItem.innerHTML = `${scorePlayer}: ${scoreValue} on ${scoreTime}
       <span class="deleteScore">Delete Score</span>`
       scoreList.append(scoreItem)
 
@@ -76,7 +103,6 @@ class ScoresButton extends NavButton {
       })
     }
     sideText.prepend(scoreList);
-
   }
 }
 
