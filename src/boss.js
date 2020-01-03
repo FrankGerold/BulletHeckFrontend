@@ -20,6 +20,7 @@ class Bullet {
     this.randY += this.traj;
     this.wall(x)
     x.square(this.randX, this.randY, 10, 3);
+    this.touchCursor(x)
   }
 
   randMotion = function() {
@@ -37,6 +38,15 @@ class Bullet {
     }
     if (this.randY < 10 || this.randY > 480) {
       this.traj = -this.traj
+    }
+  }
+
+  touchCursor = function (x) {
+    if (this.randX > x.mouseX - 10 && this.randX < x.mouseX + 10 && this.randY > x.mouseY - 10 && this.randY < x.mouseY + 10) {
+      Adapter.createGame({player_id: window.playerObj.id, level: 1, score: x.score})
+      .then((game) => {
+        
+      })
     }
   }
 }

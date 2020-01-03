@@ -63,9 +63,37 @@ class NewButton extends NavButton {
     this.button.innerText='New Game'
     buttonList.appendChild(this.button)
 
+
     this.button.addEventListener('click', (click) => {
       renderArea.innerHTML = ''
-      let newGame = new p5(Game)
+      let userForm = document.createElement('form')
+      userForm.innerHTML = `<label>Please Enter Your Name</label>
+      <input name='userNameInput' type='text'>
+      <input id = 'submitName' type='submit'>
+      `
+      renderArea.append(userForm);
+      userForm.addEventListener('submit', (evt) => {
+        evt.preventDefault()
+
+        Adapter.createPlayer({
+          name: evt.target[0].value
+        })
+        .then((player) => {
+          window.playerObj = player;
+
+
+          renderArea.innerHTML = ''
+          let newGame = new p5(Game)
+        }, this)
+
+      })
+
+
+
+
+
+
+
     })
   }
 

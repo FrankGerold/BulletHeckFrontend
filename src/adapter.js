@@ -22,7 +22,7 @@ class Adapter {
       body: JSON.stringify({
         score: gameObject.score,
         level: gameObject.level,
-        player: gameObject.player
+        player_id: gameObject.player_id
       })
     })
     .then(r => r.json())
@@ -41,7 +41,7 @@ class Adapter {
   }
 
   static createPlayer (playerObject) {
-    return fetch (API + 'player', {
+    return fetch (API + `players`, {
       method: 'POST',
       headers: {
       'Accept': 'application/json',
@@ -55,7 +55,7 @@ class Adapter {
   }
 
   static deletePlayer (playerObject) {
-    return fetch (API + 'player', {
+    return fetch (API + `players`, {
       method: 'DELETE'
     })
     .then(r => r.json())

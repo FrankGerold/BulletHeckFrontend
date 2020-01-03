@@ -65,5 +65,7 @@ const Game = (x) => {
     // setInterval(300, this.bullets.forEach((bullet, i) => {
     //   bullet.renderBullet(x)
 
+
   }
+
 }
