@@ -27,8 +27,10 @@ class ProfileButton extends NavButton {
   renderProfile (player) {
     let scoreList =  document.createElement('ul')
     let playerHeader = document.createElement('h2')
+    let playerName = player.data.attributes.name
+    let playerId = player.data.id
 
-    player.innerText = player.data.attributes.name;
+    playerHeader.innerHTML = `${playerName} <span class="deletePLayer">Delete Profile</span>`;
 
     for (game in player.included) {
       let gameItem = document.createElement('li')
@@ -41,6 +43,16 @@ class ProfileButton extends NavButton {
     }
     sideText.prepend(playerHeader);
     sideText.append(scoreList);
+
+
+    let deletePlayerButton = sideText.querySelector('.deletePlayer')
+    deletePlayerButton.addEventListener('click', (click) => {
+      Adapter.deletePlayer(playerId)
+      .then(player => {
+        sideText.innerHTML = ''
+      })
+    })
+
   }
 }
 
