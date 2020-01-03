@@ -11,7 +11,7 @@ const Game = (x) => {
     x.frameRate(60);
     x.cursor('none')
   }
-  
+
   // let rectX = 10
   // let rectY = 100
 
@@ -25,7 +25,7 @@ const Game = (x) => {
 
     x.fill('#FF7083');
 
-    let oval = x.ellipse(x.mouseX, x.mouseY, 20, 20);
+    let char = x.ellipse(x.mouseX, x.mouseY, 20, 20)
 
 
     // if ((x.keyIsPressed == true) && (x.keyCode === 37)) {
@@ -46,7 +46,7 @@ const Game = (x) => {
     //
     // let rectangle = x.rect(rectX, rectY, 50, 30);
 
-    bull1.renderBullet(x)
+    bull1.renderBullet(x);
 
   }
 }

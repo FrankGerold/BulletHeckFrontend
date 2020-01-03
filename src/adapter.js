@@ -28,13 +28,37 @@ class Adapter {
     .then(r => r.json())
   }
 
+  static deleteGame (id) {
+    return fetch (API + `games/${id}`, {
+      method: 'DELETE'
+    })
+    .then (r => r.json())
+  }
+
   static showPlayer (id) {
     return fetch (API + `players/${id}`)
     .then(r => r.json())
   }
 
   static createPlayer (playerObject) {
-    return fetch (API + 'player')
+    return fetch (API + 'player', {
+      method: 'POST',
+      headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: playerObject.name,
+      })
+    })
+    .then(r => r.json())
+  }
+
+  static deletePlayer (playerObject) {
+    return fetch (API + 'player', {
+      method: 'DELETE'
+    })
+    .then(r => r.json())
   }
 
 }

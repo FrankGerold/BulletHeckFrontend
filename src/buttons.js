@@ -61,7 +61,8 @@ class ScoresButton extends NavButton {
       let scoreTime = currentScore.updated_at
       let scorePlayer = scores.included[i].attributes.name
 
-      scoreItem.innerText = `${scorePlayer}: ${scoreValue} at ${scoreTime}`
+      scoreItem.innerHTML = `${scorePlayer}: ${scoreValue} at ${scoreTime}
+      <span class="deleteScore">Delete Score</span>`
       scoreList.append(scoreItem)
     }
     sideText.prepend(scoreList);
