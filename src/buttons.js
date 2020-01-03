@@ -64,6 +64,16 @@ class ScoresButton extends NavButton {
       scoreItem.innerHTML = `${scorePlayer}: ${scoreValue} at ${scoreTime}
       <span class="deleteScore">Delete Score</span>`
       scoreList.append(scoreItem)
+
+
+      let deleteScore = scoreItem.querySelector('.deleteScore')
+
+      deleteScore.addEventListener('click', (click) => {
+        Adapter.deleteGame(scores.data[i].id)
+        .then(game => {
+          scoreItem.remove()
+        })
+      })
     }
     sideText.prepend(scoreList);
 
